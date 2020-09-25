@@ -1,21 +1,48 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View ,Button } from 'react-native';
 
-export default function App() {
+export default class App extends React.Component {
+  state = {
+    count : 0
+  }
+  increment =() => {
+    this.setState({count: this.state.count + 1})
+  }
+  decrement =() => {
+    this.setState({count: this.state.count - 1})
+  }
+render() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View >
+      <Text style={styles.header}>
+        This is header
+      </Text>
+      <Button 
+      title="Increment button"
+      onPress={this.increment}
+      />
+      <Text style={styles.show} >{this.state.count}</Text>
+      <Button 
+      title="Decrement button "
+      onPress={this.decrement} 
+      /> 
     </View>
   );
 }
+}
+
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+  header: {
+    width:'100vw',
+    height:'10vh',
+    textAlign:'center',
+    backgroundColor: 'black',
+    color:'white',
+    fontSize: 30,
+  }
+
 });
+
+
+ 
