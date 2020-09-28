@@ -42,12 +42,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   header: {
-    width: '100vw',
-    height: '10vh',
+    width: '100%',
+    height: 100,
     padding: '5px',
     textAlign: 'center',
     color: 'black',
     fontSize: 30,
+    paddingVertical: 30,
   },
   show: {
     textAlign: 'center',
